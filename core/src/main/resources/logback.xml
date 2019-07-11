@@ -5,7 +5,8 @@
         </encoder>
     </appender>
 
-    <logger name ="kfryc" level="DEBUG"/>
+    <logger name ="kfryc" level="TRACE"/>
+    <logger name ="org.springframework" level="TRACE"/>
 
     <root level="INFO">
         <appender-ref ref="STDOUT"/>

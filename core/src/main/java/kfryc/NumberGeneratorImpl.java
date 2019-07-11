@@ -1,5 +1,7 @@
 package kfryc;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Random;
 
 public class NumberGeneratorImpl implements NumberGenerator {
@@ -14,11 +16,11 @@ public class NumberGeneratorImpl implements NumberGenerator {
 
     @Override
     public int next() {
-        return 0;
+        return random.nextInt(maxNumber);
     }
 
     @Override
     public int getMaxNumber() {
-        return 0;
+        return maxNumber;
     }
 }
