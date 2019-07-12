@@ -1,20 +1,25 @@
 package kfryc;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
+@Slf4j
+@Component
 public class MessageGeneratorImpl implements MessageGenerator {
-
-    // == constants ==
-    private static final Logger log = LoggerFactory.getLogger(MessageGeneratorImpl.class);
 
     // == fields ==
     @Autowired
-    private Game game;
-    private int guessCount = 10;
+    private final Game game;
+
+    // == constructors ==
+
+    @Autowired
+    public MessageGeneratorImpl(Game game) {
+        this.game = game;
+    }
 
     // == init section ==
     @PostConstruct
@@ -22,6 +27,7 @@ public class MessageGeneratorImpl implements MessageGenerator {
         log.info("Game = {}", game);
     }
 
+    // == public methods ==
 
     @Override
     public String getMainMessage() {
@@ -40,7 +46,7 @@ public class MessageGeneratorImpl implements MessageGenerator {
             return "You lost. The number was " + game.getNumber();
         } else if(!game.isValidNumberRange()) {
             return "Invalid Number Range!";
-        } else if(game.getRemainingGuesses() == guessCount){
+        } else if(game.getRemainingGuesses() == game.getGuessCount()){
             return "What is your first guess?";
         } else {
             String direction = "Lower";
@@ -49,7 +55,7 @@ public class MessageGeneratorImpl implements MessageGenerator {
                 direction = "Higher";
             }
 
-            return direction + "! You have " + game.getRemainingGuesses() + " guess left";
+            return direction + "! You have " + game.getRemainingGuesses() + " guesses left";
         }
     }
 }
