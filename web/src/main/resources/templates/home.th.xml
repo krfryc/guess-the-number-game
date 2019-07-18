@@ -1,0 +1,11 @@
+<thlogic>
+    <attr sel="#headId" th:replace="~{fragments/head :: headFragment}"/>
+    <attr sel="#language" th:replace="~{fragments/language :: language}"/>
+
+    <attr sel="#lang-form" th:action="@{__${T(kfryc.util.GameMappings).PLAY}__}"/>
+
+    <attr sel="#game-welcome" th:text="#{game.welcome}"/>
+    <attr sel="#play" th:href="@{__${T(kfryc.util.GameMappings).PLAY}__}" th:text="#{game.playText}"/>
+
+    <attr sel="#footerId" th:replace="~{fragments/footer :: footerFragment}"/>
+</thlogic>

@@ -1,0 +1,5 @@
+<thlogic>
+    <attr sel="#footerId" th:fragment="footerFragment"/>
+    <!-- | is a literal substitution, can add normal text between them -->
+    <attr sel="#created-by" th:text="|#{game.createdBy} Krzysztof Fryc|"/>
+</thlogic>

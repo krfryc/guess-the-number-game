@@ -1,0 +1,15 @@
+<thlogic>
+    <attr sel="#headId" th:replace="~{fragments/head :: headFragment}"/>
+    <attr sel="#language" th:replace="~{fragments/language :: language}"/>
+
+    <attr sel="#lang-form" th:action="@{__${T(kfryc.util.GameMappings).PLAY}__}"/>
+
+    <attr sel="#game-title" th:text="#{game.title}"/>
+    <attr sel="#game-over" th:text="#{game.gameOver}"/>
+
+    <attr sel="#result-message" th:text="${__${T(kfryc.util.AttributeNames).RESULT_MESSAGE}__}"/>
+    <attr sel="#restart" th:href="@{__${T(kfryc.util.GameMappings).RESTART}__}" th:text="#{game.playAgain}"/>
+    <attr sel="#home" th:href="@{__${T(kfryc.util.GameMappings).HOME}__}" th:text="#{game.homePage}"/>
+
+    <attr sel="#footerId" th:replace="~{fragments/footer :: footerFragment}"/>
+</thlogic>

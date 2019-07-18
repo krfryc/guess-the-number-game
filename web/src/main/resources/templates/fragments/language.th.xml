@@ -1,0 +1,8 @@
+<thlogic>
+    <attr sel="#language" th:fragment="language"/>
+    <attr sel="#lang-change" th:text="#{lang.change}"/>
+    <attr sel="#en" th:text="#{lang.eng}" th:value="en"/>
+    <attr sel="#pl" th:text="#{lang.pl}" th:value="pl"/>
+    <attr sel="#es" th:text="#{lang.es}" th:value="es"/>
+    <attr sel="#submit" th:value="#{game.submit}" th:type="submit"/>
+</thlogic>
